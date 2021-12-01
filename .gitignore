@@ -1,4 +1,5 @@
 ./venv
 ./code.png
 ./config.yaml
-config.yaml
+./mypy_cache
+./idea
