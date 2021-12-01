@@ -1,0 +1,15 @@
+users:
+  - user:
+      school: '安徽师范大学'
+      username: '180xxxxxxxx' # 手机号
+      password: 'xxxxxx'
+      email: 'xxxxxxxx@qq.com' # 邮箱地址
+      courses:
+        - "计算机网络"
+        - "计算机网络实验"
+        - "人机界面设计"
+        - "大学美育"
+        - "《数据库原理实验》"
+        - "《数据库原理》"
+        - "软件工程实验"
+        - "软件工程"
