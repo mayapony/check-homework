@@ -143,11 +143,11 @@ def get_code_str():
     return code_str
 
 
-def send_email(_work_status, _reciever):
+def send_email(_work_status, _receiver):
     _work_status = str(_work_status)
     r = requests.post(
         emailApiUrl,
-        data={"title": "学习通作业通知", "content": _work_status, "reciever": _reciever},
+        data={"title": "学习通作业通知", "content": _work_status, "receiver": _receiver},
     )
     print(r.json())
     # print(r.status_code)
@@ -172,7 +172,7 @@ def run():
         user = user["user"]
         courses = user["courses"]
         username = user["username"]
-        reciever = user["email"]
+        receiver = user["email"]
         _school_info = SchoolInfo.get_school_info(user["school"])
         password = Utils.encrypt_base64(user["password"])
         courses_str = " ".join(user["courses"])
@@ -187,7 +187,7 @@ def run():
         works_status = get_works_status(course_infos, courses)
         works_status_str = get_works_status_str(works_status)
         print(works_status)
-        status_code = send_email(works_status_str, reciever)
+        status_code = send_email(works_status_str, receiver)
         if status_code == 200:
             print("邮件发送成功！")
         print(f"第{index + 1}个用户执行完毕！")
